@@ -154,9 +154,9 @@ Due to the nature of the task, the model is trained using a three-step pipeline:
 
 Concerning the training loop per se, the model is optimized using **stochastic gradient descent with momentum** with a **cosine learning rate scheduler**.
 
-Due to the class imbalance of the dataset, the chosen loss function is `nn.BCEWithLogitsLoss()`, which combines a sigmoid layer with binary cross entropy loss.
+Due to the class imbalance of the dataset, the chosen loss function is `nn.BCEWithLogitsLoss`, which combines a sigmoid layer with binary cross entropy loss.
 
-The dataset split is performed using the `StratifiedGroupKFold` function, which combines **K-fold cross-validation** with **stratified sampling** to ensure that class distributions are (approximately) preserved while preventing data contamination.
+The dataset split is performed using the `StratifiedKFold` function, which combines **K-fold cross-validation** with **stratified sampling** to ensure that class distributions are (approximately) preserved while preventing data contamination.
 
 | Component | Proportion |
 | :---: | :---: |
