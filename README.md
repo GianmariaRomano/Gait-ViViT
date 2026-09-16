@@ -140,7 +140,7 @@ The classification head is adjusted for the task by featuring a linear layer, wh
 
 The model is initialized using the **pre-trained weights**, which are loaded through a mapping function, except for the classification head, which will be trained from scratch.
 
-[!NOTE]
+> [!NOTE]
 > The mapping shows some discrepancies between the original backbone and the `GaitViViT` implementation, likely due to floating-point inaccuracies.
 
 ---
