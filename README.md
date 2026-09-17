@@ -70,8 +70,8 @@ The project focuses on **adapting existing video processing models and technique
 
 ## 📊 Datasets
 
-- [Connie et al.'s Kaggle MMU Visual-Based Parkinson's Disease Dataset (https://www.kaggle.com/datasets/teeconnie/mmu-visual-based-parkinsons-disease-dataset)
--  An internal dataset from Sapienza University of Rome, *DOI coming soon*.
+- [Connie et al.'s Kaggle MMU Visual-Based Parkinson's Disease Dataset](https://www.kaggle.com/datasets/teeconnie/mmu-visual-based-parkinsons-disease-dataset)
+- Musso et al.'s F-BioGate Dataset, *DOI coming soon*.
 
 ---
 
@@ -91,7 +91,7 @@ The complete pipeline can be found at `gait_vivit_complete.ipynb`.
 
 Since the datasets contain different file formats, each file is **rendered into a synthetic .mp4 video** containing just a black background and a skeleton extracted using [AlphaPose's Halpe Full-Body Human Keypoints](https://github.com/Fang-Haoshu/Halpe-FullBody) pose estimation model.
 
-Kaggle|Internal
+Kaggle|F-BioGate
 --|--
 <img src="./media/kaggle_sample.gif" width="45%" />|<img src="./media/internal_sample.gif" width="45%" />
 
@@ -103,11 +103,11 @@ Information about each video, such as source and path, and a label indicating wh
 
 After rendering each video, the frame extraction pipeline presented in `02_frame_extraction.ipynb` is performed.
 
-After **discarding non-existing or noisy pixels**, this pipeline uniformly samples **32 frames from each video**, which are **smoothed using a median filter** and **resized to `(224, 224)`**.
+After **discarding non-existing or noisy pixels**, this pipeline uniformly samples **32 frames from each video**, which are **smoothed using a median filter** and **resized to $(224, 224)$**.
 
-The function ultimately returns an array of shape `(32, 224, 224, 3)`.
+The function ultimately returns an array of shape $(32, 224, 224, 3)$.
 
-Kaggle|Internal
+Kaggle|F-BioGate
 --|--
 <img src="./media/kaggle_frames.png" width="45%" />|<img src="./media/internal_frames.png" width="45%" />
 
