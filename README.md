@@ -32,7 +32,7 @@ The project focuses on **adapting existing video processing models and technique
 │   └── 07_performance_analysis.ipynb
 ├── presentation/
 │   ├── report.pdf
-│   └── slides.pdf
+│   └── slides.pptx
 ├── results/
 │   ├── few_shot/
 │   │   ├── ablation_study_few_shot.png
@@ -71,7 +71,7 @@ The project focuses on **adapting existing video processing models and technique
 ## 📊 Datasets
 
 - [Connie et al.'s Kaggle MMU Visual-Based Parkinson's Disease Dataset](https://www.kaggle.com/datasets/teeconnie/mmu-visual-based-parkinsons-disease-dataset)
-- Musso et al.'s F-BioGate Dataset, *DOI coming soon*.
+- Musso et al.'s F-BioGate Dataset(https://github.com/lorenzomussoo/Frontal-Gait-Flow-Recognition-Closed-and-Open-Set-Scenarios)
 
 ---
 
@@ -91,9 +91,20 @@ The complete pipeline can be found at `gait_vivit_complete.ipynb`.
 
 Since the datasets contain different file formats, each file is **rendered into a synthetic .mp4 video** containing just a black background and a skeleton extracted using [AlphaPose's Halpe Full-Body Human Keypoints](https://github.com/Fang-Haoshu/Halpe-FullBody) pose estimation model.
 
-Kaggle|F-BioGate
---|--
-<img src="./media/kaggle_sample.gif" width="45%" />|<img src="./media/internal_sample.gif" width="45%" />
+<table>
+  <tr>
+    <th align="center">Kaggle</th>
+    <th align="center">F-BioGate</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./media/kaggle_sample.gif" width="45%" />
+    </td>
+    <td align="center">
+      <img src="./media/internal_sample.gif" width="45%" />
+    </td>
+  </tr>
+</table>
 
 Information about each video, such as source and path, and a label indicating whether the subject is healthy or afflicted with Parkinson's disease are then stored in the `unified_dataset.csv` dataframe.
 
@@ -107,9 +118,20 @@ After **discarding non-existing or noisy pixels**, this pipeline uniformly sampl
 
 The function ultimately returns an array of shape $(32, 224, 224, 3)$.
 
-Kaggle|F-BioGate
---|--
-<img src="./media/kaggle_frames.png" width="45%" />|<img src="./media/internal_frames.png" width="45%" />
+<table>
+  <tr>
+    <th align="center">Kaggle</th>
+    <th align="center">F-BioGate</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./media/kaggle_frames.png" width="45%" />
+    </td>
+    <td align="center">
+      <img src="./media/internal_frames.png" width="45%" />
+    </td>
+  </tr>
+</table>
 
 When performing frame extraction on the videos in the `unified_dataset.csv` file, the extracted frames are converted into a tensor and, together with the label associaed to the original video, are stored in the `tensor_dataset.csv` file.
 
